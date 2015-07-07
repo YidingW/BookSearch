@@ -1,12 +1,60 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title></title>
+    <title>Book Search</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body ng-app="app">
-    <script src="Scripts/angular.js"></script>
-    <script src="Scripts/angular-animate.js"></script>
-    <script src="Scripts/angular-route.js"></script>
-    <script src="App/app.js"></script>
+<body ng-app="app" ng-controller="BookSearchController as vm" ng-cloak class="container-fluid">
+<style>
+    .thumbnail {
+        height: 435px;
+        overflow: auto;
+    }
+</style>
+<article class="col-md-12">
+    <h2 class="text-center">
+        This is a book search demo <small>{{vm.googleApiUrl}}</small>
+    </h2>
+    <hr />
+    <div class="row">
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label for="searchBox" class="col-sm-2 control-label">Search Book: </label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" id="searchBox" placeholder="Search by Title, ISBN, Author" ng-model="vm.searchQuery">
+                </div>
+                <div class="col-sm-2">
+                    <button class="btn btn-primary" ng-click="vm.searchBook()">Search</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <hr/>
+    <section class="row" ng-show="vm.books.length>0">
+        <h3>Results:</h3>
+
+        <div class="col-sm-6 col-md-4" ng-repeat="book in vm.books">
+            <div class="thumbnail">
+                <img ng-src="{{book.volumeInfo.imageLinks.thumbnail}}" alt="" class="image-responsive img-thumbnail"/>
+                <div class="caption">
+                    <h4 class="text-primary text-center">{{book.volumeInfo.title}} <small>{{book.volumeInfo.subtitle}}</small></h4>
+                    <p>
+                        Author(s): {{book.volumeInfo.authors}} Pages: <strong>{{book.volumeInfo.pageCount}}</strong>
+                    </p>
+                    <p>Published Date: {{book.volumeInfo.publishedDate}}</p>
+                    <p>{{book.volumeInfo.industryIdentifiers[0].type}}: <strong>{{book.volumeInfo.industryIdentifiers[0].identifier}}</strong></p>
+                    <p>{{book.volumeInfo.industryIdentifiers[1].type}}: <strong>{{book.volumeInfo.industryIdentifiers[1].identifier}}</strong></p>
+                    <p class="text-info">{{book.volumeInfo.description.substr(0, 200)}}</p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</article>
+
+<script src="Scripts/angular.min.js"></script>
+<script src="App/app.js"></script>
+<script src="App/bookSearchController.js"></script>
 </body>
 </html>
