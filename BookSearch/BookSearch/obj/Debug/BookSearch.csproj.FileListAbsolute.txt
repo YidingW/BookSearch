@@ -1,0 +1,14 @@
+C:\Users\YWANG84\Documents\GitHub\BookSearch\BookSearch\BookSearch\bin\AngularJSWebApiEmpty.dll.config
+C:\Users\YWANG84\Documents\GitHub\BookSearch\BookSearch\BookSearch\bin\AngularJSWebApiEmpty.dll
+C:\Users\YWANG84\Documents\GitHub\BookSearch\BookSearch\BookSearch\bin\AngularJSWebApiEmpty.pdb
+C:\Users\YWANG84\Documents\GitHub\BookSearch\BookSearch\BookSearch\bin\Newtonsoft.Json.dll
+C:\Users\YWANG84\Documents\GitHub\BookSearch\BookSearch\BookSearch\bin\System.Net.Http.Formatting.dll
+C:\Users\YWANG84\Documents\GitHub\BookSearch\BookSearch\BookSearch\bin\System.Web.Http.dll
+C:\Users\YWANG84\Documents\GitHub\BookSearch\BookSearch\BookSearch\bin\System.Web.Http.WebHost.dll
+C:\Users\YWANG84\Documents\GitHub\BookSearch\BookSearch\BookSearch\bin\Newtonsoft.Json.xml
+C:\Users\YWANG84\Documents\GitHub\BookSearch\BookSearch\BookSearch\bin\System.Net.Http.Formatting.xml
+C:\Users\YWANG84\Documents\GitHub\BookSearch\BookSearch\BookSearch\bin\System.Web.Http.xml
+C:\Users\YWANG84\Documents\GitHub\BookSearch\BookSearch\BookSearch\bin\System.Web.Http.WebHost.xml
+C:\Users\YWANG84\Documents\GitHub\BookSearch\BookSearch\BookSearch\obj\Debug\BookSearch.csprojResolveAssemblyReference.cache
+C:\Users\YWANG84\Documents\GitHub\BookSearch\BookSearch\BookSearch\obj\Debug\AngularJSWebApiEmpty.dll
+C:\Users\YWANG84\Documents\GitHub\BookSearch\BookSearch\BookSearch\obj\Debug\AngularJSWebApiEmpty.pdb
