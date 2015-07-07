@@ -24,7 +24,7 @@
                     <input type="text" class="form-control" id="searchBox" placeholder="Search by Title, ISBN, Author" ng-model="vm.searchQuery">
                 </div>
                 <div class="col-sm-2">
-                    <button class="btn btn-primary" ng-click="vm.searchBook()">Search</button>
+                    <button class="btn btn-primary" ng-click="vm.searchBook()"><span class="glyphicon glyphicon-search"></span> Search</button>
                 </div>
             </div>
         </form>
@@ -36,7 +36,7 @@
 
         <div class="col-sm-6 col-md-4" ng-repeat="book in vm.books">
             <div class="thumbnail">
-                <img ng-src="{{book.volumeInfo.imageLinks.thumbnail}}" alt="" class="image-responsive img-thumbnail"/>
+                <img ng-src="{{book.volumeInfo.imageLinks.thumbnail}}" alt="" class="image-responsive img-thumbnail" />
                 <div class="caption">
                     <h4 class="text-primary text-center">{{book.volumeInfo.title}} <small>{{book.volumeInfo.subtitle}}</small></h4>
                     <p>
@@ -45,8 +45,9 @@
                     <p>Published Date: {{book.volumeInfo.publishedDate}}</p>
                     <p>{{book.volumeInfo.industryIdentifiers[0].type}}: <strong>{{book.volumeInfo.industryIdentifiers[0].identifier}}</strong></p>
                     <p>{{book.volumeInfo.industryIdentifiers[1].type}}: <strong>{{book.volumeInfo.industryIdentifiers[1].identifier}}</strong></p>
-                    <p class="text-info">{{book.volumeInfo.description.substr(0, 200)}}</p>
-
+                    <p class="text-center">
+                        <a class="btn btn-primary" ng-href="{{book.volumeInfo.previewLink}}" target="blank"><span class="glyphicon glyphicon-eye-open"></span> Preview</a>
+                    </p>
                 </div>
             </div>
         </div>
