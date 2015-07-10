@@ -7,7 +7,7 @@
 <body ng-app="app" ng-controller="BookSearchController as vm" ng-cloak class="container-fluid">
 <style>
     .thumbnail {
-        height: 435px;
+        height: 440px;
         overflow: auto;
     }
 </style>
@@ -31,23 +31,25 @@
     </div>
 
     <hr/>
-    <section class="row" ng-show="vm.books.length>0">
-        <h3>Results:</h3>
-
+    <section class="row" ng-show="vm.totalItems>0">
+        <p class="text-center text-muted">Total search results: {{vm.totalItems}}</p>
         <div class="col-sm-6 col-md-4" ng-repeat="book in vm.books">
             <div class="thumbnail">
-                <img ng-src="{{book.volumeInfo.imageLinks.thumbnail}}" alt="" class="image-responsive img-thumbnail" />
+                <img ng-src="{{book.volumeInfo.imageLinks.thumbnail}}" alt="" class="image-responsive img-thumbnail"/>
                 <div class="caption">
                     <h4 class="text-primary text-center">{{book.volumeInfo.title}} <small>{{book.volumeInfo.subtitle}}</small></h4>
                     <p>
                         Author(s): {{book.volumeInfo.authors}} Pages: <strong>{{book.volumeInfo.pageCount}}</strong>
                     </p>
                     <p>Published Date: {{book.volumeInfo.publishedDate}}</p>
-                    <p>{{book.volumeInfo.industryIdentifiers[0].type}}: <strong>{{book.volumeInfo.industryIdentifiers[0].identifier}}</strong></p>
-                    <p>{{book.volumeInfo.industryIdentifiers[1].type}}: <strong>{{book.volumeInfo.industryIdentifiers[1].identifier}}</strong></p>
+                    <p>{{book.volumeInfo.industryIdentifiers[0].type}}: <strong>{{book.volumeInfo.industryIdentifiers[0].identifier}}</strong>
+                    </p>
+                    <p>{{book.volumeInfo.industryIdentifiers[1].type}}: <strong>{{book.volumeInfo.industryIdentifiers[1].identifier}}</strong>
+                    </p>
                     <p class="text-center">
                         <a class="btn btn-primary" ng-href="{{book.volumeInfo.previewLink}}" target="blank"><span class="glyphicon glyphicon-eye-open"></span> Preview</a>
                     </p>
+                    <pre>{{book | json}}</pre>
                 </div>
             </div>
         </div>
